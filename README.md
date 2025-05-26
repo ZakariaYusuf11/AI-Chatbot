@@ -31,6 +31,8 @@ This project is a **production-ready, cloud-native AI chatbot** deployed on Micr
 
 ## 📁 Project Structure
 
+```
+
 AI-Chatbot/
 ├── app/ # FastAPI chatbot app
 │ ├── main.py # Chatbot API code
@@ -62,6 +64,7 @@ AI-Chatbot/
 │
 ├── .env.example # Sample env vars
 └── README.md # Project overview (this file)
+```
 
 ---
 
