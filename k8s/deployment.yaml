@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: chatbot
-          image: chatbotzak123.azurecr.io/chatbot-app:v1
+          image: chatbotzak123.azurecr.io/chatbot-app:v6
           ports:
             - containerPort: 8000
-      #  env:
-      #  - name: OPENAI_API_KEY
-      #   valueFrom:
-      #    secretKeyRef:
-      #       name: openai-secret
-      #        key: OPENAI_API_KEY
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openai-secret
+                  key: OPENAI_API_KEY
