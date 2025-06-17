@@ -1,31 +1,48 @@
 # 🤖 AI Chatbot - DevOps Deployment on Azure
 
-This project is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Azure using a full DevOps workflow. It is modular, scalable, and designed to mimic real-world cloud application deployment processes using Terraform, Docker, Kubernetes, and Azure-native services.
+This project is a **production-grade, cloud-native AI chatbot** running on Microsoft Azure with full DevOps automation. It uses **Terraform, Docker, Kubernetes (AKS)**, and **OpenAI GPT integration**, along with a **custom-built frontend** styled for a DevOps vibe.
 
 ---
 
 ## ✅ What’s Working
 
-- **Modular Infrastructure-as-Code (IaC)** using Terraform for:
+- **Modular Infrastructure-as-Code (IaC)** with Terraform for:
+
   - Azure Kubernetes Service (AKS)
   - Azure Container Registry (ACR)
   - Virtual Network & Subnet
-- **Chatbot API** built with FastAPI & Python
-- **Containerized** using Docker and pushed to ACR
-- **Deployed to AKS** using Kubernetes `deployment.yaml` and `service.yaml`
-- **Public access via LoadBalancer** on AKS
-- **Live Swagger docs** at:  
-  🌐 [http://20.246.167.134/docs](http://20.246.167.134/docs)
+
+- **FastAPI Chatbot API** with real-time OpenAI GPT responses
+
+- **Containerized with Docker**, stored in ACR
+
+- **Deployed to AKS** using Kubernetes manifests
+
+- **Public access via LoadBalancer**  
+  🌐 [http://20.246.167.134](http://20.246.167.134)
+
+- **Custom DevOps-themed chatbot UI** with:
+
+  - GPT-powered responses
+  - Clear Chat functionality
+  - Background image with DevOps logos
+
+- **Live Swagger docs**  
+  📘 [http://20.246.167.134/docs](http://20.246.167.134/docs)
+
+- **CI/CD pipeline with GitHub Actions**:
+  - Builds and pushes Docker image
+  - Deploys to AKS automatically on `main` push
 
 ---
 
 ## 🌱 Coming Soon
 
-- 🔐 OpenAI GPT-3.5 / GPT-4 integration (via Kubernetes secrets)
-- ⚙️ GitHub Actions for CI/CD pipeline (build → push → deploy)
-- 📈 Prometheus + Grafana monitoring stack
-- 🌐 Custom domain with TLS (e.g., `chatbot.cloudcity.dev`)
+- 📊 Prometheus + Grafana monitoring
+- 🌐 Custom domain with HTTPS (e.g., `chatbot.cloudcity.dev`)
 - 🧪 Environment isolation (dev, staging, production)
+- 🔐 Rate limiting and authentication
+- 🧠 Persistent chat history (database integration)
 
 ---
 
@@ -70,13 +87,14 @@ AI-Chatbot/
 
 ## 📦 Tech Stack
 
-- **Infrastructure**: Terraform, Azure Resource Manager
+- **Infrastructure**: Terraform, Azure CLI, ARM
 - **App Framework**: FastAPI (Python)
+- **AI Integration**: OpenAI GPT-3.5
 - **Containerization**: Docker
 - **Orchestration**: Kubernetes (AKS)
 - **Registry**: Azure Container Registry (ACR)
-- **Monitoring**: (Planned) Prometheus + Grafana
-- **CI/CD**: (Planned) GitHub Actions
+- **Frontend**: Static HTML/CSS/JS (DevOps themed)
+- **CI/CD**: GitHub Actions
 
 ---
 
@@ -93,10 +111,14 @@ This project simulates how modern tech companies deploy, monitor, and scale cont
 
 ## 👨‍💻 Status
 
-🟢 **LIVE** — public endpoint running on AKS  
-🔧 **In Progress** — AI integration, CI/CD, monitoring  
-📦 **Staged for expansion** — supports future environments and scaling
+🟢 **LIVE** — Chatbot accessible via LoadBalancer  
+🤖 **GPT Integration** — Live with OpenAI API  
+🚀 **CI/CD** — Full pipeline: build, push, deploy  
+🎨 **Frontend** — Custom UI deployed and themed  
+🔧 **Next Focus** — Monitoring, auth, domains
 
 ---
+
+cd
 
 > Built with ☁️ love, Terraformed foundations, and container-powered robots 🧱🤖🐳
