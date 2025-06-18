@@ -1,6 +1,7 @@
 # 🤖 AI Chatbot - DevOps Deployment on Azure
 
-This is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Azure using a full DevOps pipeline. It’s modular, scalable, and mirrors real-world enterprise cloud deployment practices using Terraform, Docker, Kubernetes (AKS), GitHub Actions, and Azure-native services.
+This is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Azure using a full DevOps pipeline. It’s modular, scalable, and mirrors real-world enterprise cloud deployment practices using Terraform, Docker, Kubernetes (AKS), GitHub Actions, and Azure-native services.  
+➡️ Now includes **monitoring with Prometheus + Grafana** for real-time observability.
 
 ---
 
@@ -13,6 +14,7 @@ This is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Az
 - ⚙️ CI/CD with GitHub Actions (build → push → deploy)
 - 🌐 LoadBalancer exposing public endpoint
 - 🎨 Custom front-end with DevOps-themed background
+- 📈 **Monitoring dashboards** powered by Grafana & Prometheus
 - 📸 Visual chatbot demonstration below
 
 ---
@@ -23,12 +25,35 @@ This is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Az
 
 ---
 
-## 🌱 Coming Soon
+## 🧠 Why This Project Matters
 
-- 🔐 Kubernetes secrets for OpenAI key management
-- 📈 Monitoring with Prometheus & Grafana
-- 🌍 Custom domain & HTTPS (TLS)
-- 🧪 Multiple environments (dev, staging, prod)
+This project is perfect for DevOps engineers or learners who want to **build and deploy something real** instead of only watching tutorials. It teaches:
+
+- Modular Terraform best practices
+- Container orchestration with Kubernetes
+- AKS, ACR, LoadBalancers, and resource networking on Azure
+- End-to-end DevOps automation
+- **Production-grade observability**
+
+---
+
+## 📈 Monitoring Stack (Prometheus + Grafana)
+
+We used `kube-prometheus-stack` to deploy monitoring tools via Helm charts. This stack captures metrics for:
+
+- CPU & Memory usage
+- Pod networking (bandwidth, packets, errors)
+- Cluster health
+
+> Dashboards are auto-deployed with useful Kubernetes templates.
+
+### 📊 Resource Usage
+
+![Chatbot Metrics](./assets/chatbot-metrics.jpg)
+
+### 🌐 Network Traffic
+
+![Chatbot Network](./assets/chatbot-network.jpg)
 
 ---
 
@@ -79,16 +104,16 @@ AI-Chatbot/
 
 ## 📦 Tech Stack
 
-| Layer          | Tool                               |
-| -------------- | ---------------------------------- |
-| IaC            | Terraform                          |
-| Cloud Provider | Microsoft Azure                    |
-| Container      | Docker                             |
-| Orchestration  | Kubernetes (AKS)                   |
-| Registry       | Azure Container Registry           |
-| App Framework  | FastAPI (Python)                   |
-| CI/CD          | GitHub Actions                     |
-| Monitoring     | (Coming soon) Prometheus + Grafana |
+| Layer          | Tool                     |
+| -------------- | ------------------------ |
+| IaC            | Terraform                |
+| Cloud Provider | Microsoft Azure          |
+| Container      | Docker                   |
+| Orchestration  | Kubernetes (AKS)         |
+| Registry       | Azure Container Registry |
+| App Framework  | FastAPI (Python)         |
+| CI/CD          | GitHub Actions           |
+| Monitoring     | Prometheus + Grafana     |
 
 ---
 
@@ -100,6 +125,7 @@ This project is perfect for DevOps engineers or learners who want to **build and
 - Container orchestration with Kubernetes
 - AKS, ACR, LoadBalancers, and resource networking on Azure
 - End-to-end DevOps automation
+- **Production-grade observability**
 
 ---
 
@@ -194,10 +220,6 @@ client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 > 🔐 Do **not** commit your `.env` file or hardcoded secrets.
 
 ---
-
-## 📸 AI Chatbot in Action
-
-![DevOps GPT Assistant](./assets/chat-ui.jpg)
 
 ---
 
