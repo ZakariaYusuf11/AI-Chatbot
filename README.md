@@ -1,124 +1,226 @@
 # 🤖 AI Chatbot - DevOps Deployment on Azure
 
-This project is a **production-grade, cloud-native AI chatbot** running on Microsoft Azure with full DevOps automation. It uses **Terraform, Docker, Kubernetes (AKS)**, and **OpenAI GPT integration**, along with a **custom-built frontend** styled for a DevOps vibe.
+This is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Azure using a full DevOps pipeline. It’s modular, scalable, and mirrors real-world enterprise cloud deployment practices using Terraform, Docker, Kubernetes (AKS), GitHub Actions, and Azure-native services.
 
 ---
 
 ## ✅ What’s Working
 
-- **Modular Infrastructure-as-Code (IaC)** with Terraform for:
+- 🚀 FastAPI-based chatbot with OpenAI GPT integration
+- 🐳 Dockerised and pushed to Azure Container Registry (ACR)
+- ☸️ Deployed to AKS using Kubernetes manifests
+- 📦 Modular Infrastructure-as-Code (Terraform modules)
+- ⚙️ CI/CD with GitHub Actions (build → push → deploy)
+- 🌐 LoadBalancer exposing public endpoint
+- 🎨 Custom front-end with DevOps-themed background
+- 📸 Visual chatbot demonstration below
 
-  - Azure Kubernetes Service (AKS)
-  - Azure Container Registry (ACR)
-  - Virtual Network & Subnet
+---
 
-- **FastAPI Chatbot API** with real-time OpenAI GPT responses
+## 📸 AI Chatbot in Action
 
-- **Containerized with Docker**, stored in ACR
-
-- **Deployed to AKS** using Kubernetes manifests
-
-- **Public access via LoadBalancer**  
-  🌐 [http://20.246.167.134](http://20.246.167.134)
-
-- **Custom DevOps-themed chatbot UI** with:
-
-  - GPT-powered responses
-  - Clear Chat functionality
-  - Background image with DevOps logos
-
-- **Live Swagger docs**  
-  📘 [http://20.246.167.134/docs](http://20.246.167.134/docs)
-
-- **CI/CD pipeline with GitHub Actions**:
-  - Builds and pushes Docker image
-  - Deploys to AKS automatically on `main` push
+![DevOps GPT Assistant](./assets/chat-ui.jpg)
 
 ---
 
 ## 🌱 Coming Soon
 
-- 📊 Prometheus + Grafana monitoring
-- 🌐 Custom domain with HTTPS (e.g., `chatbot.cloudcity.dev`)
-- 🧪 Environment isolation (dev, staging, production)
-- 🔐 Rate limiting and authentication
-- 🧠 Persistent chat history (database integration)
+- 🔐 Kubernetes secrets for OpenAI key management
+- 📈 Monitoring with Prometheus & Grafana
+- 🌍 Custom domain & HTTPS (TLS)
+- 🧪 Multiple environments (dev, staging, prod)
 
 ---
 
-## 📁 Project Structure
+## 📁 Folder Structure
 
 ```
-
 AI-Chatbot/
-├── app/ # FastAPI chatbot app
-│ ├── main.py # Chatbot API code
-│ ├── requirements.txt # Python dependencies
-│ └── Dockerfile # Container instructions
+├── app/                    # FastAPI chatbot app
+│   ├── main.py
+│   ├── Dockerfile
+│   └── requirements.txt
 │
-├── k8s/ # Kubernetes deployment config
-│ ├── deployment.yaml # Deploys chatbot app to AKS
-│ └── service.yaml # Exposes it via LoadBalancer
+├── static/                 # Front-end assets
+│   └── index.html
+│
+├── k8s/                    # Kubernetes configs
+│   ├── deployment.yaml
+│   └── service.yaml
 │
 ├── terraform/
-│ ├── modules/ # Reusable Terraform modules
-│ │ ├── network/ # VNet + Subnet
-│ │ ├── aks/ # AKS cluster setup
-│ │ └── acr/ # Azure Container Registry
-│ │
-│ └── environments/
-│ └── dev/
-│ ├── main.tf
-│ ├── variables.tf
-│ ├── terraform.tfvars
-│ ├── outputs.tf
-│ └── backend.tf
+│   ├── modules/            # Reusable Terraform modules
+│   │   ├── aks/
+│   │   ├── acr/
+│   │   └── network/
+│   └── environments/
+│       └── dev/
+│           ├── main.tf
+│           ├── variables.tf
+│           ├── terraform.tfvars       🔑 Your config here
+│           ├── outputs.tf
+│           └── backend.tf
 │
-├── .github/ # (Coming soon) GitHub Actions workflows
-│ └── workflows/
-│ ├── ci-cd.yml
-│ └── trivy-scan.yml
+├── monitoring/             # Monitoring stack via Helm (optional)
+│   ├── prometheus-values.yaml
+│   └── grafana-values.yaml
 │
-├── .env.example # Sample env vars
-└── README.md # Project overview (this file)
+├── assets/                 # Images and diagrams
+│   └── chat-ui.jpeg
+│
+├── .github/                # GitHub Actions workflows
+│   └── workflows/
+│       └── ci-cd.yml
+│
+└── README.md
 ```
 
 ---
 
 ## 📦 Tech Stack
 
-- **Infrastructure**: Terraform, Azure CLI, ARM
-- **App Framework**: FastAPI (Python)
-- **AI Integration**: OpenAI GPT-3.5
-- **Containerization**: Docker
-- **Orchestration**: Kubernetes (AKS)
-- **Registry**: Azure Container Registry (ACR)
-- **Frontend**: Static HTML/CSS/JS (DevOps themed)
-- **CI/CD**: GitHub Actions
+| Layer          | Tool                               |
+| -------------- | ---------------------------------- |
+| IaC            | Terraform                          |
+| Cloud Provider | Microsoft Azure                    |
+| Container      | Docker                             |
+| Orchestration  | Kubernetes (AKS)                   |
+| Registry       | Azure Container Registry           |
+| App Framework  | FastAPI (Python)                   |
+| CI/CD          | GitHub Actions                     |
+| Monitoring     | (Coming soon) Prometheus + Grafana |
 
 ---
 
-## 🧠 Why This Matters
+## 🧠 Why This Project Matters
 
-This project simulates how modern tech companies deploy, monitor, and scale containerized microservices on the cloud. It demonstrates:
+This project is perfect for DevOps engineers or learners who want to **build and deploy something real** instead of only watching tutorials. It teaches:
 
-- Real-world cloud architecture
-- Secure, scalable deployments
-- Clean infrastructure management using modules
-- Foundation for MLOps and AI production apps
-
----
-
-## 👨‍💻 Status
-
-🟢 **LIVE** — Chatbot accessible via LoadBalancer  
-🤖 **GPT Integration** — Live with OpenAI API  
-🚀 **CI/CD** — Full pipeline: build, push, deploy  
-🎨 **Frontend** — Custom UI deployed and themed  
-🔧 **Next Focus** — Monitoring, auth, domains
+- Modular Terraform best practices
+- Container orchestration with Kubernetes
+- AKS, ACR, LoadBalancers, and resource networking on Azure
+- End-to-end DevOps automation
 
 ---
 
-cd
+## ⚙️ Instructions to Deploy Locally or on Your Own Azure Account
 
-> Built with ☁️ love, Terraformed foundations, and container-powered robots 🧱🤖🐳
+### Prerequisites:
+
+- Azure CLI configured with your subscription
+- Terraform installed (`>=1.3.0`)
+- Docker Desktop installed
+- Kubernetes CLI (`kubectl`) installed
+- Python 3.10+
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/ZakariaYusuf11/AI-Chatbot.git
+cd AI-Chatbot
+```
+
+### 2. Configure Terraform
+
+Go to `terraform/environments/dev/terraform.tfvars` and **replace placeholder values** with your own Azure setup:
+
+```hcl
+project_name        = "chatbot"
+resource_group_name = "chatbot-cloudcity-rg"
+location            = "UK South"
+acr_name            = "youracrname"
+aks_name            = "chatbot-aks"
+vnet_name           = "chatbot-vnet"
+subnet_name         = "chatbot-subnet"
+```
+
+> Ensure `acr_name` is globally unique!
+
+### 3. Deploy Infrastructure
+
+```bash
+cd terraform/environments/dev
+terraform init
+terraform plan
+terraform apply
+```
+
+### 4. Build & Push the Docker Image
+
+```bash
+cd ../../../app
+az acr login --name YOUR_ACR_NAME
+docker build -t YOUR_ACR_NAME.azurecr.io/chatbot-app:latest .
+docker push YOUR_ACR_NAME.azurecr.io/chatbot-app:latest
+```
+
+### 5. Deploy to AKS
+
+```bash
+kubectl apply -f ../k8s/deployment.yaml
+kubectl apply -f ../k8s/service.yaml
+```
+
+---
+
+## 🔐 Secure OpenAI Key Setup (Kubernetes Secrets)
+
+To integrate GPT securely:
+
+### Step 1: Create the Kubernetes Secret
+
+```bash
+kubectl create secret generic openai-secret \
+  --from-literal=OPENAI_API_KEY=sk-xxxxxxx
+```
+
+### Step 2: Reference the secret in your deployment.yaml
+
+```yaml
+env:
+  - name: OPENAI_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: openai-secret
+        key: OPENAI_API_KEY
+```
+
+### Step 3: Python uses the variable like this
+
+```python
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+```
+
+> 🔐 Do **not** commit your `.env` file or hardcoded secrets.
+
+---
+
+## 📸 AI Chatbot in Action
+
+![DevOps GPT Assistant](./assets/chat-ui.jpg)
+
+---
+
+## 🧪 Local Development (Optional)
+
+To test locally:
+
+```bash
+cd app
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+Visit [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+## 👨‍💻 Author
+
+Built with ☁️ love and container-powered robots by [Zakaria Yusuf](https://github.com/ZakariaYusuf11)  
+📍 London | 🚀 DevOps | 🤖 AI + Cloud Enthusiast  
+🔗 LinkedIn: [linkedin.com/in/zakaria-yusuf](https://linkedin.com/in/zakaria-yusuf)
+
+---
+
+> ⭐ Star this repo if you found it useful!
