@@ -1,4 +1,7 @@
-adminUser: admin
-adminPassword: admin123
-service:
-  type: LoadBalancer
+grafana:
+  enabled: true
+  admin:
+    existingSecret: grafana-admin-credentials
+  service:
+    type: ClusterIP
+    port: 80
