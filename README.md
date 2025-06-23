@@ -116,18 +116,6 @@ AI-Chatbot/
 
 ---
 
-## 🧠 Why This Project Matters
-
-This project is perfect for DevOps engineers or learners who want to **build and deploy something real** instead of only watching tutorials. It teaches:
-
-- Modular Terraform best practices
-- Container orchestration with Kubernetes
-- AKS, ACR, LoadBalancers, and resource networking on Azure
-- End-to-end DevOps automation
-- **Production-grade observability**
-
----
-
 ## ⚙️ Instructions to Deploy Locally or on Your Own Azure Account
 
 ### Prerequisites:
