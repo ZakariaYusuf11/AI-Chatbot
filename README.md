@@ -12,7 +12,6 @@ This is a **production-ready, cloud-native AI chatbot** deployed on Microsoft Az
 - ☸️ Deployed to AKS using Kubernetes manifests
 - 📦 Modular Infrastructure-as-Code (Terraform modules)
 - ⚙️ CI/CD with GitHub Actions (build → push → deploy)
-- 🌐 LoadBalancer exposing public endpoint
 - 🎨 Custom front-end with DevOps-themed background
 - 📈 **Monitoring dashboards** powered by Grafana & Prometheus
 - 📸 Visual chatbot demonstration below
@@ -82,11 +81,11 @@ AI-Chatbot/
 │       └── dev/
 │           ├── main.tf
 │           ├── variables.tf
-│           ├── terraform.tfvars       🔑 Your config here
+│           ├── terraform.tfvars
 │           ├── outputs.tf
 │           └── backend.tf
 │
-├── monitoring/             # Monitoring stack via Helm (optional)
+├── monitoring/             # Monitoring stack via Helm
 │   ├── prometheus-values.yaml
 │   └── grafana-values.yaml
 │
@@ -221,27 +220,11 @@ client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 ---
 
----
-
-## 🧪 Local Development (Optional)
-
-To test locally:
-
-```bash
-cd app
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-Visit [http://localhost:8000/docs](http://localhost:8000/docs)
-
----
-
 ## 👨‍💻 Author
 
 Built with ☁️ love and container-powered robots by [Zakaria Yusuf](https://github.com/ZakariaYusuf11)  
 📍 London | 🚀 DevOps | 🤖 AI + Cloud Enthusiast  
-🔗 LinkedIn: [linkedin.com/in/zakaria-yusuf](https://linkedin.com/in/zakaria-yusuf)
+🔗 LinkedIn: [www.linkedin.com/in/zakaria-yusuf-a6a365230](www.linkedin.com/in/zakaria-yusuf-a6a365230)
 
 ---
 
